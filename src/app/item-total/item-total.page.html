@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{itens.nome}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light">
+  <ion-card *ngIf="itens">
+    <ion-card-header class="card">
+      <img *ngIf="itens.cartaz" src="{{itens.cartaz}}" width="120" height="120" />
+      <p class="p1">{{itens.descricao1}} </p>
+      <ion-icon *ngIf="!itens.cartaz" name="videocam-off"></ion-icon>
+    </ion-card-header>
+
+    <ion-card-content>
+      <h1>{{itens.nome}} <ion-icon name="star" [color]="itens.favorito===true ? 'warning' : ('light')"></ion-icon></h1>
+      <p>{{itens.lancamento}}
+      </p>
+    </ion-card-content>
+    <ion-item>
+      <ion-badge color="medium" *ngFor="let genero of itens.generos">{{genero}}</ion-badge>
+    </ion-item>
+  </ion-card>
+</ion-content>

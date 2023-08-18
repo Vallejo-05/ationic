@@ -1,0 +1,78 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="danger">
+    <ion-title>
+      Tecnologias Inovadoras
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-list *ngIf="listaLista">
+
+    <ion-item-sliding *ngFor="let lista of listaLista">
+      <ion-item lines="full" (click)="exibirLista(lista)">
+
+        <ion-thumbnail slot="start">
+          <img *ngIf="lista.icon" src="{{lista.icon}}" />
+          <ion-icon *ngIf="!lista.icon" name="videocam-off"></ion-icon>
+        </ion-thumbnail>
+
+        <ion-label class="ion-text-wrap">
+          <div>
+            <h1>{{lista.nome}}</h1>
+          </div>
+        </ion-label>
+      </ion-item>
+    </ion-item-sliding>
+
+    <ion-item-sliding *ngFor="let transporte of listaTransporte">
+      <ion-item lines="full" (click)="exibirTransporte(transporte)">
+
+        <ion-thumbnail slot="start">
+          <img *ngIf="transporte.icon" src="{{transporte.icon}}" />
+          <ion-icon *ngIf="!transporte.icon" name="videocam-off"></ion-icon>
+        </ion-thumbnail>
+
+        <ion-label class="ion-text-wrap">
+          <div>
+            <h1>{{transporte.nome}}</h1>
+          </div>
+        </ion-label>
+      </ion-item>
+    </ion-item-sliding>
+
+    <ion-item-sliding *ngFor="let saude of listaSaude">
+      <ion-item lines="full" (click)="exibirSaude(saude)">
+
+        <ion-thumbnail slot="start">
+          <img *ngIf="saude.icon" src="{{saude.icon}}" />
+          <ion-icon *ngIf="!saude.icon" name="videocam-off"></ion-icon>
+        </ion-thumbnail>
+
+        <ion-label class="ion-text-wrap">
+          <div>
+            <h1>{{saude.nome}}</h1>
+          </div>
+        </ion-label>
+      </ion-item>
+    </ion-item-sliding>
+
+    <ion-item-sliding *ngFor="let aprendizado of listaAprendizado">
+      <ion-item lines="full" (click)="exibirAprendizado(aprendizado)">
+
+        <ion-thumbnail slot="start">
+          <img *ngIf="aprendizado.icon" src="{{aprendizado.icon}}" />
+          <ion-icon *ngIf="!aprendizado.icon" name="videocam-off"></ion-icon>
+        </ion-thumbnail>
+
+        <ion-label class="ion-text-wrap">
+          <div>
+            <h1>{{aprendizado.nome}}</h1>
+          </div>
+        </ion-label>
+      </ion-item>
+    </ion-item-sliding>
+
+  </ion-list>
+</ion-content>
